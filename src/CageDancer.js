@@ -11,15 +11,21 @@ NicCageDancer.prototype = Object.create(MakeDancer.prototype);
 NicCageDancer.prototype.constructor = NicCageDancer;
 
 NicCageDancer.prototype.step = function(timeBetweenSteps) {
-  MakeDancer.prototype.step.call(this, timeBetweenSteps);
+  // MakeDancer.prototype.step.call(this, timeBetweenSteps);
   //this.$node.toggle();
   
   this.$node
     .mouseover(function() {
-      $(this).children().addClass('BIGCAGE');
+      $(this).children().animate({
+        height: '750px',
+        width: '750px'
+      });
     })
     .mouseout(function() {
-      $(this).children().removeClass('BIGCAGE');
+      $(this).children().animate({
+        height: '200px',
+        width: '200px'
+      });
     });
   //on hover, get bigger
 };

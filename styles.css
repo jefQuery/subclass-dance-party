@@ -29,13 +29,15 @@ body, a:link, a:visited, a:active{
 }
 .cage{
   border:none;
-  position:absolute;
+
+  position:absolute; 
+  transition:0.5s;  
 }
-.BIGCAGE{
-  height:1000px;
-  width:750px;
-  transition: 3s;
+.cageImg{
+  height:200px;
+  width:200px;
 }
+
 .doggo{
   border:none;
   position:absolute;
