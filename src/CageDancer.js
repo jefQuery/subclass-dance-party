@@ -5,7 +5,6 @@ var NicCageDancer = function(top, left, timeBetweenSteps) {
   // this.$node = $('span > img.cage');
   this.$node.addClass('cage');
   this.$node.removeClass('dancer');
-
 };
 
 NicCageDancer.prototype = Object.create(MakeDancer.prototype);
