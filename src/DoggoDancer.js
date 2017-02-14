@@ -10,7 +10,7 @@ var DoggoDancer = function(top, left, timeBetweenSteps) {
 DoggoDancer.prototype = Object.create(MakeDancer.prototype);
 DoggoDancer.prototype.constructor = DoggoDancer;
 
-DoggoDancer.prototype.step = function(timeBetweenSteps) {
-  MakeDancer.prototype.step.call(this, timeBetweenSteps);
+DoggoDancer.prototype.step = function() {
+  MakeDancer.prototype.step.call(this, 50);
   this.$node.toggleClass('change');
 };
