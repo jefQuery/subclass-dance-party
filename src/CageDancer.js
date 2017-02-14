@@ -23,8 +23,8 @@ NicCageDancer.prototype.step = function(timeBetweenSteps) {
     })
     .mouseout(function() {
       $(this).children().animate({
-        height: '200px',
-        width: '200px'
+        height: '100px',
+        width: '100px'
       });
     });
   //on hover, get bigger

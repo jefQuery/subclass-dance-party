@@ -14,6 +14,16 @@ $(document).ready(function() {
       Math.random() * 1000
     );
     $('body').append(dancer.$node);
+    window.dancers.push(dancer);
+  });
+
+  $('.lineUpButton').on('click', function() {
+    var dancerSpacing = $(window).width() / window.dancers.length;
+    for (var i = 0; i < window.dancers.length; i++) {
+      
+      window.dancers[i].lineUp((dancerSpacing * i) + 'px'); //pass in index of left, and hard-coded top
+      
+    }
   });
 });
 
