@@ -29,3 +29,7 @@ NicCageDancer.prototype.step = function(timeBetweenSteps) {
     });
   //on hover, get bigger
 };
+
+NicCageDancer.prototype.lineUp = function(left) {
+  this.setPosition('45%', left);
+};

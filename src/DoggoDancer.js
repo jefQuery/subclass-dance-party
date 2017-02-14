@@ -14,3 +14,7 @@ DoggoDancer.prototype.step = function() {
   MakeDancer.prototype.step.call(this, 350);
   this.$node.toggleClass('change');
 };
+
+DoggoDancer.prototype.lineUp = function(left) {
+  this.setPosition('46.725%', left);
+};
