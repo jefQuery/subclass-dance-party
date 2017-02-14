@@ -16,5 +16,5 @@ DoggoDancer.prototype.step = function() {
 };
 
 DoggoDancer.prototype.lineUp = function(left) {
-  this.setPosition('46.725%', left);
+  this.setPosition('45.3%', left);
 };
