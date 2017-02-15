@@ -9,8 +9,8 @@ $(document).ready(function() {
 
     // make a dancer with a random position
     var dancer = new dancerMakerFunction(
-      $('body').height() * Math.random() * 0.9,
-      $('body').width() * Math.random() * 0.9,
+      $('body').height() * Math.random() * 0.8,
+      $('body').width() * Math.random() * 0.8,
       Math.random() * 1000
     );
     $('body').append(dancer.$node);
@@ -44,6 +44,12 @@ $(document).ready(function() {
       }
       window.dancers[i].dosido(window.dancers[minPosition]);
       
+    }
+  });  
+  $('.resetButton').on('click', function() {
+    for (var i = 0; i < window.dancers.length; i++) {
+      // for each dancer find closest neighbor
+      window.dancers[i].reset();
     }
   });
 });

@@ -20,8 +20,6 @@ MakeDancer.prototype.setPosition = function(top, left) {
     top: top,
     left: left
   };
-  this.top = top;
-  this.left = left;
   this.$node.css(styleSettings);
 };
 
@@ -36,4 +34,12 @@ MakeDancer.prototype.dosido = function(target) {
   this.setPosition(target.top, target.left);
   target.setPosition(copiedObject.top, copiedObject.left);
 
+  this.top = target.top;
+  this.left = target.left;
+  target.top = copiedObject.top;
+  target.left = copiedObject.left;
+};
+
+MakeDancer.prototype.reset = function() {
+  this.setPosition(this.top, this.left);
 };
