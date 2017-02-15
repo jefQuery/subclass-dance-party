@@ -12,3 +12,7 @@ MakeBlinkyDancer.prototype.step = function(timeBetweenSteps) {
   this.$node.toggle();
 };
 
+MakeBlinkyDancer.prototype.lineUp = function(left) {
+  this.setPosition('45%', left);
+};
+

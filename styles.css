@@ -32,7 +32,11 @@ body, a:link, a:visited, a:active{
   position:absolute; 
   transition:0.5s;  
 }
-.cageImg, .beeImg{
+.beeImg {
+  height: 100px;
+  width: 150px;
+}
+.cageImg{
   height: 100px;
   width: 100px;
 }

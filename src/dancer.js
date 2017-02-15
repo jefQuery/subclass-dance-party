@@ -30,9 +30,10 @@ MakeDancer.prototype.lineUp = function(left) {
 };
 
 MakeDancer.prototype.dosido = function(target) {
-  var current = this;
+ // var current = this;
+  var copiedObject = jQuery.extend({}, this);
   
   this.setPosition(target.top, target.left);
-  target.setPosition(current.top, current.left);
+  target.setPosition(copiedObject.top, copiedObject.left);
 
 };

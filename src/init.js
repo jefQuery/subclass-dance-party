@@ -9,8 +9,8 @@ $(document).ready(function() {
 
     // make a dancer with a random position
     var dancer = new dancerMakerFunction(
-      $('body').height() * Math.random(),
-      $('body').width() * Math.random(),
+      $('body').height() * Math.random() * 0.9,
+      $('body').width() * Math.random() * 0.9,
       Math.random() * 1000
     );
     $('body').append(dancer.$node);
@@ -35,11 +35,12 @@ $(document).ready(function() {
       for (var j = i + 1; j < window.dancers.length; j++) {
         var newDancer = window.dancers[j].$node.position();
         var distance = Math.sqrt(Math.pow((newDancer.top - currentDancer.top), 2) + Math.pow((newDancer.left - currentDancer.left), 2));
-
-        if (distance < minDistance) {
+        if (distance === 0) {
+          continue;
+        } else if (distance < minDistance) {
           minDistance = distance;
           minPosition = j;
-        }
+        } 
       }
       window.dancers[i].dosido(window.dancers[minPosition]);
       
