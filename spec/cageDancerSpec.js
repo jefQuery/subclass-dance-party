@@ -12,23 +12,24 @@ describe('CageDancer', function() {
     expect(cageDancer.$node).to.be.an.instanceof(jQuery);
   });
 
-  it('should have a step function that makes its node blink', function() {
-    sinon.spy(cageDancer.$node, 'toggle');
-    cageDancer.step(timeBetweenSteps);
-    expect(cageDancer.$node.toggle.called).to.be.true;
+  it('should have a different step function', function() {
+    var makeDancer = new MakeDancer(10, 20, timeBetweenSteps);
+    expect(cageDancer.step).to.be.a('function');
+    expect(cageDancer.step).to.not.eql(makeDancer.step);
   });
 
-  describe('dance', function() {
-    it('should call step at least once per second', function() {
-      sinon.spy(cageDancer, 'step');
-      expect(cageDancer.step.callCount).to.be.equal(0);
-      clock.tick(timeBetweenSteps); // it seems an extra tick is necessary...
-      clock.tick(timeBetweenSteps);
-
-      expect(cageDancer.step.callCount).to.be.equal(1);
-
-      clock.tick(timeBetweenSteps);
-      expect(cageDancer.step.callCount).to.be.equal(2);
-    });
+  it('should have a lineUp function', function() {
+    expect(cageDancer.lineUp).to.be.a('function');
   });
+
+  // it('should update the size when a user mouses over the paths', function () {
+  //   var oldSize = cageDancer.$node.position();
+  //   // debugger;
+  //   // document.body.('path_one').dispatchEvent(new MouseEvent('mouseover'));
+  //   var cageElement = document.body.getElementsByClassName('cage');
+  //   console.log(cageElement);
+  //   console.log(document.body);
+  //   cageElement.dispatchEvent(new MouseEvent('mouseover'));
+  //   expect(cageElement.position()).to.not.equal(oldSize);
+  // });
 });

@@ -12,23 +12,13 @@ describe('DoggoDancer', function() {
     expect(doggoDancer.$node).to.be.an.instanceof(jQuery);
   });
 
-  it('should have a step function that makes its node blink', function() {
-    sinon.spy(doggoDancer.$node, 'toggle');
-    doggoDancer.step(timeBetweenSteps);
-    expect(doggoDancer.$node.toggle.called).to.be.true;
+  it('should have a different step function', function() {
+    var makeDancer = new MakeDancer(10, 20, timeBetweenSteps);
+    expect(doggoDancer.step).to.be.a('function');
+    expect(doggoDancer.step).to.not.eql(makeDancer.step);
   });
 
-  describe('dance', function() {
-    it('should call step at least once per second', function() {
-      sinon.spy(doggoDancer, 'step');
-      expect(doggoDancer.step.callCount).to.be.equal(0);
-      clock.tick(timeBetweenSteps); // it seems an extra tick is necessary...
-      clock.tick(timeBetweenSteps);
-
-      expect(doggoDancer.step.callCount).to.be.equal(1);
-
-      clock.tick(timeBetweenSteps);
-      expect(doggoDancer.step.callCount).to.be.equal(2);
-    });
+  it('should have a lineUp function', function() {
+    expect(doggoDancer.lineUp).to.be.a('function');
   });
 });
